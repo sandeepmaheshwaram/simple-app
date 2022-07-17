@@ -3,9 +3,7 @@ pipeline {
     tools {
         maven 'maven3'
     }
-    options {
-        buildDiscarder logRotator(daysToKeepStr: '5', numToKeepStr: '7')
-    }
+   
     stages{
         stage('Build'){
             steps{
@@ -17,23 +15,21 @@ pipeline {
             steps{
                 script{
 
-                    def mavenPom = readMavenPom file: 'pom.xml'
-                    def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "simpleapp-snapshot" : "simpleapp-release"
-                    nexusArtifactUploader artifacts: [
+                    
                         [
                             artifactId: 'simple-app', 
                             classifier: '', 
                             file: "target/simple-app-${mavenPom.version}.war", 
                             type: 'war'
-                        ]
                     ], 
+                            
                     credentialsId: 'nexus3', 
                     groupId: 'in.javahome', 
                     nexusUrl: '54.211.11.250:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
                     repository:'simpleapp-release', 
-                    version: "${mavenPom.version}"
+                    version: "1.0.0"
                     }
             }
         }
