@@ -20,7 +20,7 @@ pipeline {
                         file: 'target/sample-app-1.0.0.war',
                         type: 'war',
                      ]
-        },
+        }
             creadentialsid: 'nexus3',
             groupid: 'in.javahome',
             nexusversion: 'nexus3',
