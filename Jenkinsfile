@@ -23,7 +23,7 @@ pipeline {
         },
             creadentialsid: 'nexus3',
             groupid: 'in.javahome',
-            nexusversion: 'nexus2',
+            nexusversion: 'nexus3',
             protocol: 'http',
             repository: '',
             version:'1.0.0'
