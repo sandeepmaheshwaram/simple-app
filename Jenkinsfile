@@ -21,10 +21,10 @@ pipeline {
                         type: 'war',
                      ]
         }
-            creadentialsid: 'nexus3',
+            creadentialsid: 'nexus',
             groupid: 'in.javahome',
             nexusurl: '3.87.184.249:8081',
-            nexusversion: 'nexus3',
+            nexusversion: 'nexus',
             protocol: 'http',
             repository: 'simpleapp-release',
             version:'1.0.0'
