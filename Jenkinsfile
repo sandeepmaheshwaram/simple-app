@@ -8,18 +8,17 @@ pipeline {
         stage('Build'){
             steps{
                  sh script: 'mvn clean package'
-                 archiveArtifacts artifacts: 'target/*.war', onlyIfSuccessful: true
+                 archiveArtifacts artifacts: 'target/*.war', 
             }
         }
         stage('Upload War To Nexus'){
             steps{
                 script{
 
-                    
                         [
                             artifactId: 'simple-app', 
                             classifier: '', 
-                            file: "target/simple-app-${mavenPom.version}.war", 
+                            file: 'target/simple-app-1.0.0.war', 
                             type: 'war'
                     ], 
                             
