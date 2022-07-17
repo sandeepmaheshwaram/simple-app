@@ -25,7 +25,7 @@ pipeline {
             groupid: 'in.javahome',
             nexusversion: 'nexus3',
             protocol: 'http',
-            repository: '',
+            repository: 'simpleapp-release',
             version:'1.0.0'
             
       
